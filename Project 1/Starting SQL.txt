@@ -1,0 +1,44 @@
+
+CREATE TABLE users (
+	ID int NOT NULL PRIMARY_KEY AUTO_INCREMENT,
+	username varchar(255) UNIQUE,
+	email varchar(255),
+	password varchar(255)
+);
+
+CREATE TABLE order_table(
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	createdAt DATE DEFAULT NOW(),
+	total int,
+	username varchar(255)
+	
+);
+CREATE TABLE tblproduct(
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	stock int,
+	name varchar(255),
+	product_desc varchar(255),
+	code varchar(50) UNIQUE,
+	image varchar(100),
+	price int,
+	Category varchar(255)
+	
+);
+
+CREATE TABLE item_order(
+	order_id int,
+	product_id int,
+	quantity int
+);
+INSERT INTO `tblproduct`(`stock`,`code`, `name`,`product_desc`,`image`,`price`,`Category`) VALUES
+('56','Tyfhaf','Iphone','Some Iphone I got from a market in China','img/best-iphone-eva.jpg','450','Phones'),
+('12','Hkjnsk','Meta googles','I got these straight from a talking lizard','img/glasses.jpg','123','Entertainment'),
+('23','NiuhUh','Knoife','This is a real knoife, no medic is capable of stitching you back from this','img/triangular_bayonet.jpg','34','Survival'),
+('34','GiuhIU','Toxic waste','Radioactive waste straight from Chernobyl','img/nuclear_waste.jpg','900','Misc'),
+('66','hJKHks','bath_salts','NOT for smoking!','img/bathing_salts.jpg','23','Hygiene'),
+('73','GHofjo','Samsung phone','From a reputable seller in Zimbabwe, Africa','img/samsungPhone.jpg','400','Phones'),
+('123','OIuhia','rocket','Just dont ask where its from and I wont ask what you are planning to do with it','img/S-300.jpg','450','Ballistic-Missiles'),
+('56','YoiuaA','Fertilizer','The new gold is brown folks','img/Fertilizer.jpg','450','Landscaping'),
+('76','HjkOIJ','Huawei','Some Iphone I got from the street','img/best-phone-eva.jpg','450','Phones'),
+('56','KUHJNL','Google pixel phone','It is pretty good','img/best-phone-eva.jpg','450','Phones');
+
